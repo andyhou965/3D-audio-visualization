@@ -51,9 +51,15 @@ async function createAudio(url, { threshold, expire } = {}) {
 const mockData = () => ({ signal: false, avg: 0, gain: 1, data: [] });
 
 const useStore = create((set, get) => {
-	const drums = createAudio("/drums.mp3", { threshold: 10, expire: 500 });
-	const snare = createAudio("/snare.mp3", { threshold: 40, expire: 500 });
-	const synth = createAudio("/synth.mp3");
+	const drums = createAudio("assets/drums.mp3", {
+		threshold: 10,
+		expire: 500,
+	});
+	const snare = createAudio("assets/snare.mp3", {
+		threshold: 40,
+		expire: 500,
+	});
+	const synth = createAudio("assets/synth.mp3");
 	return {
 		loaded: false,
 		clicked: false,
